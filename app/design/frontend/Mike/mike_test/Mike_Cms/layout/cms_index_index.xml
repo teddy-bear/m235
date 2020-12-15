@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main" htmlClass="section-main" htmlTag="section">
+            <block class="Magento\Framework\View\Element\Template" name="custom_form"
+                   template="Mike_Cms::custom_form.phtml">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">custom-form-wrapper</argument>
+                </arguments>
+            </block>
+            <!--<block class="Magento\Framework\View\Element\Template" name="phtml_form"
+                   template="Magento_CMS::phtml_form.phtml"/>-->
+            <!--<uiComponent name="customer_form"/>-->
+        </referenceContainer>
+    </body>
+</page>

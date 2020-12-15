@@ -1,0 +1,19 @@
+<h1>ko test 2  ccc</h1>
+<div id="ko-test-2" data-bind="scope:'ko-test-2'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+{
+    "#ko-test-2": {
+        "Magento_Ui/js/core/app": {
+           "components": {
+                "ko-test-2": {
+                    "component": "Magento_Catalog/js/ko-test-2",
+                    "template" : "Magento_Catalog/ko-test-2-template"
+                }
+            }
+        }
+    }
+}
+</script>

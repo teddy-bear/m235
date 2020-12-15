@@ -1,0 +1,34 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+$attributes = $block->getCssClass() ? ' class="' . $block->getCssClass() . '"' : '';
+$attr = $block->getAttributes();
+if (!empty($attr)) {
+    foreach ($block->getAttributes() as $attribute => $value) {
+        $attributes .= ' ' . $attribute . '="' . $value . '"';
+    }
+};
+echo
+    '<' . $block->getTag() . $attributes . '>' . $block->getText() . '</' . $block->getTag() . '>';
+?>
+
+<div id="m2-component" data-bind="scope:'m2kocomponent'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+    {
+        "#m2-component": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "m2kocomponent": {
+                        "component": "Magento_Catalog/js/m2kocomponent",
+                        "template" : "Magento_Catalog/m2kocomponent-template"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+</div>

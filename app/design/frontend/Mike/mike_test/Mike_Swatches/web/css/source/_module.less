@@ -1,0 +1,185 @@
+// Local variables.
+@circle_size: 32px;
+@circle_size_selected: @circle_size - 8;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    //
+    //  Product color attribute swatches for product page.
+    //  ---------------------------------------------
+    .catalog-product-view {
+        .swatch-attribute {
+            &.color {
+                display: flex;
+                padding: @circle_size;
+                text-align: center;
+                height: auto;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+
+                .swatch-attribute-options {
+                    display: flex;
+                    padding: 23px 0 11px;
+                    overflow: hidden;
+                    position: relative;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    width: 100%;
+                }
+
+                // Selected color label.
+                .swatch-attribute-selected-option {
+                    color: @primary__color__dark;
+                    font-size: @font-size__l;
+                    padding: 0;
+                }
+
+                .swatch-option {
+                    display: flex;
+                    width: @circle_size;
+                    height: @circle_size;
+                    min-width: @circle_size;
+                    min-height: @circle_size;
+                    border-radius: 50%;
+                    margin: 0 12px 12px;
+                    cursor: pointer;
+                    outline: none;
+                    position: relative;
+                    transition: transform .3s;
+                    border: 0; // for smooth circles
+                    // outline around selected item.
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: -4px;
+                        left: -4px;
+                        width: @circle_size;
+                        height: @circle_size;
+                        border: solid 2px #000;
+                        border-radius: 50%;
+                        display: none;
+                    }
+
+                    // Selected option
+                    &.selected {
+                        width: @circle_size_selected;
+                        height: @circle_size_selected;
+                        min-width: @circle_size_selected;
+                        min-height: @circle_size_selected;
+                        margin: 4px 16px;
+                        outline: none;
+                        overflow: initial;
+                        border: none;
+
+                        &::before {
+                            display: block;
+                        }
+                    }
+
+                    &.disabled,
+                    &.out-of-stock {
+                        opacity: .5;
+                        cursor: default;
+
+                        &:after {
+                            background: none;
+                        }
+                    }
+
+                    &:not(.disabled):not(.selected):hover {
+                        transform: scale(1.05);
+                    }
+                }
+
+                span.count {
+                    position: absolute;
+                    top: 23px;
+                    right: 0;
+                    width: @circle_size;
+                    height: @circle_size;
+                    background: blue;
+                    line-height: @circle_size;
+                    border-radius: 50%;
+                    color: #333;
+                    margin: 0 12px;
+                    cursor: pointer;
+
+                    i {
+                        display: none;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .swatch-option {
+                max-width: none;
+                &.disabled {
+                    &:after {
+                        background: none;
+                    }
+                }
+                &:not(.disabled):hover {
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    // Global rule to hide attribute controls
+    // check vendor\magento\module-swatches\view\frontend\web\js\swatch-renderer.js line 589 for hide details
+    .swatch-input {
+        left: -10000px;
+        position: absolute;
+        visibility: hidden;
+    }
+}
+
+//
+//  Tablet < 768px
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .catalog-product-view {
+        .swatch-attribute.color {
+            padding: 24px 8px 16px;
+            height: auto;
+            .swatch-attribute-options {
+                padding: 16px 0;
+                overflow: visible;
+            }
+            .swatch-option {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                min-height: 40px;
+                margin: 0 4px 4px;
+                &::before {
+                    width: 40px;
+                    height: 40px;
+                }
+                &.selected {
+                    width: 32px;
+                    height: 32px;
+                    min-width: 32px;
+                    min-height: 32px;
+                    margin: 4px 8px;
+                }
+                &:hover {
+                    opacity: .7;
+                }
+            }
+            span.count {
+                top: 17px;
+                right: -4px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0 4px;
+            }
+        }
+    }
+}

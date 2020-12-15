@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="category.products.list"
+                        template="Magento_Catalog::product/list_custom.phtml">
+            <arguments>
+                <argument name="css_class" xsi:type="string">some-test</argument>
+                <argument name="item_name" xsi:type="string">item-name-value</argument>
+            </arguments>
+        </referenceBlock>
+        <!--<referenceBlock name="custom_global_block" remove="true"/>-->
+        <move element="custom_global_block" destination="content" before="-"/>
+        <referenceBlock name="custom_global_block">
+            <arguments>
+                <argument translate="true" name="text" xsi:type="string">Custom title</argument>
+                <argument name="tag" xsi:type="string">em</argument>
+                <argument name="css_class" xsi:type="string">custom-block-category</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

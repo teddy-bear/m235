@@ -1,0 +1,28 @@
+<h3 data-bind="text:getTitle()"></h3>
+<pre data-bind="text:sampleContent"></pre>
+
+<fieldset>
+    <div>You've clicked <span data-bind='text: numberOfClicks'>&nbsp;</span> times</div>
+    <button data-bind='click: registerClick'>Click me</button>
+    <button data-bind='click: resetClicks'>Reset me</button>
+</fieldset>
+
+<br>
+<br>
+
+<fieldset id="main">
+    <p data-bind="text:theValue"></p>
+    <select data-bind="value:theValue">
+        <option value="">-- Choose --</option>
+        <option value="1">First</option>
+        <option value="2">Second</option>
+        <option value="3">Third</option>
+    </select>
+    <input type="text" data-bind="value:theValue"/>
+    <pre data-bind="text:randomValueSet">N/A</pre>
+    <div>
+        <br/>
+        <button id="button" data-bind="click: resetValue">reset</button>
+        <button id="btn-rand" data-bind="click: randomValue">random</button>
+    </div>
+</fieldset>

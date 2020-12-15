@@ -1,0 +1,23 @@
+<div class="owl-wrapper" style="clear: both; float: none; padding: 20px; border: 1px solid red;">
+    <h3>OWL Carousel</h3>
+    <div id="owlslider" class="owl-carousel owl-theme">
+        <div><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg"></div>
+        <div><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg"></div>
+        <div><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg"></div>
+        <div><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg"></div>
+        <div><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg"></div>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'owl_carousel'
+    ], function ($) {
+        $(document).ready(function () {
+            console.log('owl started');
+            $(".owl-carousel").owlCarousel();
+            console.log('owl end');
+        });
+    });
+</script>

@@ -1,0 +1,57 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .section-main {
+        form {
+            background: #eee;
+            padding: 10px 12px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+
+            .fieldset {
+                margin: 0;
+            }
+        }
+
+        .field {
+            margin-bottom: 20px;
+
+            label {
+                margin: 0 0 8px;
+                display: inline-block;
+                font-weight: 600;
+            }
+
+            &.required > .label:after {
+                content: '*';
+                color: #e02b27;
+                font-size: 1.2rem;
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+}
+
+//
+//  Not mobile, >768px
+//  _____________________________________________
+
+@media only screen and (min-width: @screen__m) {
+
+    .section-main {
+        .row {
+            margin: 0 -12px;
+            display: flex;
+        }
+
+        div[class*='col-'] {
+            padding: 0 12px;
+        }
+
+        .col-sm-6 {
+            width: 50%;
+        }
+    }
+}

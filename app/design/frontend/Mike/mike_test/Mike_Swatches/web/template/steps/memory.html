@@ -1,0 +1,28 @@
+<!-- ko if: sortedArray().length -->
+<div class="product-accordion-tab" data-bind="attr: { 'id': modelType }, css: { 'tab-disabled': isDisabled(), 'tab-expanded': isVisible() }, visible: !isHidden(), afterRender: renderComplete()">
+    <div class="tab" data-bind="click: toggleStep">
+        <div class="title-wrapper">
+            <span class="tab-title" data-bind="text: getHeaderServiceText() || stepTitle"></span>
+            <span class="tab-choice">
+                <!-- ko text: selectedMemory() || $t('Select') --><!-- /ko -->
+            </span>
+        </div>
+    </div>
+
+    <div class="tab-content" data-bind="slideToggle: isVisible(), isAnimate: isAnimate()">
+        <!-- ko if: getHeaderServiceText() -->
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="service-text" data-bind="html: getDescriptionServiceText()"></p>
+            </div>
+        </div>
+        <!-- /ko -->
+
+        <div class="row" data-bind="afterRender: swatchResolver"></div>
+    </div>
+</div>
+
+<!-- ko if: getPopupServiceText() -->
+<div class="service-text-modal" data-bind="attr: { 'id': selectors.serviceTextPopupId }, afterRender: initModal, html: getPopupServiceText()"></div>
+<!-- /ko -->
+<!-- /ko -->

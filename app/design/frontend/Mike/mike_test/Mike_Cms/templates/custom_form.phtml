@@ -1,0 +1,25 @@
+<?php
+/**
+ * Custom form
+ * @var $block
+ */
+?>
+
+<div id="custom-form-wrapper" data-bind="scope:'ko-custom-form'" class="<?php echo $block->getCssClass(); ?>">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+{
+    "#custom-form-wrapper": {
+        "Magento_Ui/js/core/app": {
+           "components": {
+                "ko-custom-form": {
+                    "component": "Mike_Cms/js/custom-form",
+                    "template" : "Mike_Cms/custom-form"
+                }
+            }
+        }
+    }
+}
+</script>

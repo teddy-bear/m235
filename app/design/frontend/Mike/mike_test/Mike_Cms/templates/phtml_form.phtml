@@ -1,0 +1,70 @@
+<form class="form" id="phtml-form" method="post" autocomplete="off">
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?php echo __('PHTML Form') ?></span></legend>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="field required">
+                    <label for="user_name" class="label"><span><?php echo __('Name') ?></span></label>
+                    <div class="control">
+                        <input type="text" name="user_name" id="user_name" value="" title="<?php echo __('Name'); ?>"
+                               class="input-text" data-validate="{required:true, letters-only:true}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="field required">
+                    <label for="email_address" class="label"><span><?php echo __('Email') ?></span></label>
+                    <div class="control">
+                        <input type="email" name="email" id="email_address" value="" title="<?php echo __('Email') ?>"
+                               class="input-text" data-validate="{required:true, 'validate-email':true}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="field required">
+                    <input type="checkbox" name="user_checked" title="Agreement terms" value="1"
+                           data-validate="{required:true}"
+                           id="user_checked"
+                           class="checkbox">
+                    <label for="user_checked" class="label">
+                        <span>Agreement terms</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="field required">
+                    <label for="user_country" class="label"><span><?php echo __('Country') ?></span></label>
+                    <div class="control">
+                        <select name="user_country" id="user_country" data-validate="{required:true,
+                        'validate-select':true}">
+                            <option value="">Select country</option>
+                            <option value="11">Country 1</option>
+                            <option value="22">Country 2</option>
+                            <option value="33">Country 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php echo __('Submit') ?>">
+                <span><?php echo __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+<script type="text/x-magento-init">
+    {
+        "#phtml-form": {
+            "validation": {}
+        }
+    }
+</script>

@@ -1,0 +1,22 @@
+// Local variables.
+@circle_size: 32px;
+@circle_size_selected: @circle_size - 8;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .logo img {
+        max-width: 150px;
+    }
+
+}
+
+//
+//  Tablet < 768px
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}

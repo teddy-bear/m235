@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceContainer name="header.panel">
+        <block class="Magento\Framework\View\Element\Template" name="custom_global_block" after="header.links"
+               template="Magento_Theme::custom_global_block.phtml">
+            <arguments>
+                <argument translate="true" name="text" xsi:type="string">Summary</argument>
+                <argument name="tag" xsi:type="string">strong</argument>
+                <argument name="css_class" xsi:type="string">custom-block-global</argument>
+            </arguments>
+        </block>
+    </referenceContainer>
+</body>
+</page>
